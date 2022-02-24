@@ -17,38 +17,32 @@ public class UserController {
     @Autowired
     UserService userService;
 
-    @GetMapping("")
-    public List<User> list() {
+    @GetMapping("/list")
+    public List<User> list(){
         return userService.listAllUser();
     }
 
-    @GetMapping("/{id}")
-    public ResponseEntity<User> get(@PathVariable Integer id) {
-        try {
-            User user = userService.getUser(id);
-            return new ResponseEntity<User>(user, HttpStatus.OK);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
-        }
+    @GetMapping("/status/{id}")
+    public String checkStatus(@PathVariable Integer id){
+        return userService.checkAuthStatus(id).toString();
     }
-    @PostMapping("/")
-    public void add(@RequestBody User user) {
+
+    @PostMapping("/add")
+    public void add(@RequestBody User user){
         userService.saveUser(user);
     }
-    @PutMapping("/{id}")
-    public ResponseEntity<?> update(@RequestBody User user, @PathVariable Integer id) {
-        try {
-            User existUser = userService.getUser(id);
-            user.setId(id);
-            userService.saveUser(user);
-            return new ResponseEntity<>(HttpStatus.OK);
-        } catch (NoSuchElementException e) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-    }
-    @DeleteMapping("/{id}")
-    public void delete(@PathVariable Integer id) {
 
-        userService.deleteUser(id);
+    @PostMapping("/auth/{id}")
+    public void authorize(@PathVariable Integer id){
+        userService.userAuthenticate(id);
+
     }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteAcc(@PathVariable Integer id){
+        userService.deleteUser(id);
+
+        return "DELETE SUCCESSFUL";
+    }
+
 }

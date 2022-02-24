@@ -15,6 +15,16 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    public void userAuthenticate(Integer id){
+       userRepository.findById(id).get().setEnabled(true);
+
+    }
+
+    public Boolean checkAuthStatus(Integer id){
+        return userRepository.findById(id).get().isEnabled();
+    }
+
     public List<User> listAllUser() {
         return userRepository.findAll();
     }
