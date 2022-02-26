@@ -18,7 +18,6 @@ public class UserService {
 
     public void userAuthenticate(Integer id){
        userRepository.findById(id).get().setEnabled(true);
-
     }
 
     public Boolean checkAuthStatus(Integer id){
