@@ -1,5 +1,7 @@
 package com.drew.Reddit.models;
 
+import com.drew.Reddit.exceptions.SpringRedditException;
+
 import java.util.Arrays;
 
 public enum VoteType {
