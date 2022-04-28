@@ -3,6 +3,7 @@ package com.drew.Reddit.services;
 
 import com.drew.Reddit.dto.SubredditDto;
 import com.drew.Reddit.exceptions.SpringRedditException;
+import com.drew.Reddit.mapper.SubredditMapper;
 import com.drew.Reddit.models.Subreddit;
 import com.drew.Reddit.repositories.SubredditRepository;
 import lombok.AllArgsConstructor;

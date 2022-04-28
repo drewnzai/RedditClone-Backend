@@ -5,6 +5,7 @@ import com.drew.Reddit.dto.PostRequest;
 import com.drew.Reddit.dto.PostResponse;
 import com.drew.Reddit.exceptions.PostNotFoundException;
 import com.drew.Reddit.exceptions.SubredditNotFoundException;
+import com.drew.Reddit.mapper.PostMapper;
 import com.drew.Reddit.models.Post;
 import com.drew.Reddit.models.Subreddit;
 import com.drew.Reddit.models.User;

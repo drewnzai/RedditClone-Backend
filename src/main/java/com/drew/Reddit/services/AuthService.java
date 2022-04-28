@@ -11,6 +11,7 @@ import com.drew.Reddit.models.User;
 import com.drew.Reddit.models.VerificationToken;
 import com.drew.Reddit.repositories.UserRepository;
 import com.drew.Reddit.repositories.VerificationTokenRepository;
+import com.drew.Reddit.utils.JwtProvider;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;

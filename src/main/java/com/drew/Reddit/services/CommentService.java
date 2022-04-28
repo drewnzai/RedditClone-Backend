@@ -4,6 +4,7 @@ package com.drew.Reddit.services;
 import com.drew.Reddit.dto.CommentsDto;
 import com.drew.Reddit.exceptions.PostNotFoundException;
 import com.drew.Reddit.exceptions.SpringRedditException;
+import com.drew.Reddit.mapper.CommentMapper;
 import com.drew.Reddit.models.Comment;
 import com.drew.Reddit.models.NotificationEmail;
 import com.drew.Reddit.models.Post;
