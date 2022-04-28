@@ -1,16 +1,16 @@
 package com.drew.Reddit.services;
 
-import com.programming.techie.springredditclone.dto.AuthenticationResponse;
-import com.programming.techie.springredditclone.dto.LoginRequest;
-import com.programming.techie.springredditclone.dto.RefreshTokenRequest;
-import com.programming.techie.springredditclone.dto.RegisterRequest;
-import com.programming.techie.springredditclone.exceptions.SpringRedditException;
-import com.programming.techie.springredditclone.model.NotificationEmail;
-import com.programming.techie.springredditclone.model.User;
-import com.programming.techie.springredditclone.model.VerificationToken;
-import com.programming.techie.springredditclone.repository.UserRepository;
-import com.programming.techie.springredditclone.repository.VerificationTokenRepository;
-import com.programming.techie.springredditclone.security.JwtProvider;
+
+import com.drew.Reddit.dto.AuthenticationResponse;
+import com.drew.Reddit.dto.LoginRequest;
+import com.drew.Reddit.dto.RefreshTokenRequest;
+import com.drew.Reddit.dto.RegisterRequest;
+import com.drew.Reddit.exceptions.SpringRedditException;
+import com.drew.Reddit.models.NotificationEmail;
+import com.drew.Reddit.models.User;
+import com.drew.Reddit.models.VerificationToken;
+import com.drew.Reddit.repositories.UserRepository;
+import com.drew.Reddit.repositories.VerificationTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;

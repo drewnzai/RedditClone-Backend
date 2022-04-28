@@ -1,6 +1,7 @@
 package com.drew.Reddit.dto;
 
-import com.programming.techie.springredditclone.model.VoteType;
+
+import com.drew.Reddit.models.VoteType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

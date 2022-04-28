@@ -1,19 +1,21 @@
 package com.drew.Reddit.services;
 
-import com.programming.techie.springredditclone.dto.VoteDto;
-import com.programming.techie.springredditclone.exceptions.PostNotFoundException;
-import com.programming.techie.springredditclone.exceptions.SpringRedditException;
-import com.programming.techie.springredditclone.model.Post;
-import com.programming.techie.springredditclone.model.Vote;
-import com.programming.techie.springredditclone.repository.PostRepository;
-import com.programming.techie.springredditclone.repository.VoteRepository;
+
+import com.drew.Reddit.dto.VoteDto;
+import com.drew.Reddit.exceptions.PostNotFoundException;
+import com.drew.Reddit.exceptions.SpringRedditException;
+import com.drew.Reddit.models.Post;
+import com.drew.Reddit.models.Vote;
+import com.drew.Reddit.repositories.PostRepository;
+import com.drew.Reddit.repositories.VoteRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import static com.programming.techie.springredditclone.model.VoteType.UPVOTE;
+import static com.drew.Reddit.models.VoteType.UPVOTE;
+
 
 @Service
 @AllArgsConstructor

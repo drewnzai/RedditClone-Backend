@@ -1,16 +1,16 @@
 package com.drew.Reddit.services;
 
-import com.programming.techie.springredditclone.dto.PostRequest;
-import com.programming.techie.springredditclone.dto.PostResponse;
-import com.programming.techie.springredditclone.exceptions.PostNotFoundException;
-import com.programming.techie.springredditclone.exceptions.SubredditNotFoundException;
-import com.programming.techie.springredditclone.mapper.PostMapper;
-import com.programming.techie.springredditclone.model.Post;
-import com.programming.techie.springredditclone.model.Subreddit;
-import com.programming.techie.springredditclone.model.User;
-import com.programming.techie.springredditclone.repository.PostRepository;
-import com.programming.techie.springredditclone.repository.SubredditRepository;
-import com.programming.techie.springredditclone.repository.UserRepository;
+
+import com.drew.Reddit.dto.PostRequest;
+import com.drew.Reddit.dto.PostResponse;
+import com.drew.Reddit.exceptions.PostNotFoundException;
+import com.drew.Reddit.exceptions.SubredditNotFoundException;
+import com.drew.Reddit.models.Post;
+import com.drew.Reddit.models.Subreddit;
+import com.drew.Reddit.models.User;
+import com.drew.Reddit.repositories.PostRepository;
+import com.drew.Reddit.repositories.SubredditRepository;
+import com.drew.Reddit.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;

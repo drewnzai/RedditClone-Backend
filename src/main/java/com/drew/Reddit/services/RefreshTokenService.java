@@ -1,8 +1,9 @@
 package com.drew.Reddit.services;
 
-import com.programming.techie.springredditclone.exceptions.SpringRedditException;
-import com.programming.techie.springredditclone.model.RefreshToken;
-import com.programming.techie.springredditclone.repository.RefreshTokenRepository;
+
+import com.drew.Reddit.exceptions.SpringRedditException;
+import com.drew.Reddit.models.RefreshToken;
+import com.drew.Reddit.repositories.RefreshTokenRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

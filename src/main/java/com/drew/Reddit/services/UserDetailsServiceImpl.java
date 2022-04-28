@@ -1,7 +1,8 @@
 package com.drew.Reddit.services;
 
-import com.programming.techie.springredditclone.model.User;
-import com.programming.techie.springredditclone.repository.UserRepository;
+
+import com.drew.Reddit.models.User;
+import com.drew.Reddit.repositories.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

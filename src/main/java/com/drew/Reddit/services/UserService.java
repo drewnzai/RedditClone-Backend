@@ -16,11 +16,11 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-    public void userAuthenticate(Integer id){
+    public void userAuthenticate(Long id){
        userRepository.findById(id).get().setEnabled(true);
     }
 
-    public Boolean checkAuthStatus(Integer id){
+    public Boolean checkAuthStatus(Long id){
         return userRepository.findById(id).get().isEnabled();
     }
 
@@ -32,11 +32,11 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public User getUser(Integer id) {
+    public User getUser(Long id) {
         return userRepository.findById(id).get();
     }
 
-    public void deleteUser(Integer id) {
+    public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
 }

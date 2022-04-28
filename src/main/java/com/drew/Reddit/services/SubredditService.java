@@ -1,10 +1,10 @@
 package com.drew.Reddit.services;
 
-import com.programming.techie.springredditclone.dto.SubredditDto;
-import com.programming.techie.springredditclone.exceptions.SpringRedditException;
-import com.programming.techie.springredditclone.mapper.SubredditMapper;
-import com.programming.techie.springredditclone.model.Subreddit;
-import com.programming.techie.springredditclone.repository.SubredditRepository;
+
+import com.drew.Reddit.dto.SubredditDto;
+import com.drew.Reddit.exceptions.SpringRedditException;
+import com.drew.Reddit.models.Subreddit;
+import com.drew.Reddit.repositories.SubredditRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
