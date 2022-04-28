@@ -13,6 +13,7 @@ import com.drew.Reddit.repositories.CommentRepository;
 import com.drew.Reddit.repositories.PostRepository;
 import com.drew.Reddit.repositories.UserRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
