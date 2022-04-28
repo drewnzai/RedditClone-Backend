@@ -1,8 +1,16 @@
 package com.drew.Reddit.services;
 
-import com.drew.Reddit.models.User;
-import com.drew.Reddit.repositories.UserRepository;
-import com.drew.Reddit.utils.RegisterRequest;
+import com.programming.techie.springredditclone.dto.AuthenticationResponse;
+import com.programming.techie.springredditclone.dto.LoginRequest;
+import com.programming.techie.springredditclone.dto.RefreshTokenRequest;
+import com.programming.techie.springredditclone.dto.RegisterRequest;
+import com.programming.techie.springredditclone.exceptions.SpringRedditException;
+import com.programming.techie.springredditclone.model.NotificationEmail;
+import com.programming.techie.springredditclone.model.User;
+import com.programming.techie.springredditclone.model.VerificationToken;
+import com.programming.techie.springredditclone.repository.UserRepository;
+import com.programming.techie.springredditclone.repository.VerificationTokenRepository;
+import com.programming.techie.springredditclone.security.JwtProvider;
 import lombok.AllArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,7 +26,6 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
-
 
 @Service
 @AllArgsConstructor

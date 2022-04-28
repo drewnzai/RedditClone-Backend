@@ -1,4 +1,4 @@
-package com.drew.Reddit.utils;
+package com.drew.Reddit.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

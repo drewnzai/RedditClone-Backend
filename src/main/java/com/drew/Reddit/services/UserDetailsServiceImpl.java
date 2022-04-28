@@ -1,39 +1,41 @@
 package com.drew.Reddit.services;
 
-import com.drew.Reddit.models.User;
-import com.drew.Reddit.repositories.UserRepository;
-import com.drew.Reddit.utils.JwtRequest;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.programming.techie.springredditclone.model.User;
+import com.programming.techie.springredditclone.repository.UserRepository;
+import lombok.AllArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Optional;
+
+import static java.util.Collections.singletonList;
 
 @Service
+@AllArgsConstructor
 public class UserDetailsServiceImpl implements UserDetailsService {
-
-    @Autowired
-    private UserRepository userRepository;
-
-    @Autowired
-    private PasswordEncoder bcryptEncoder;
+    private final UserRepository userRepository;
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException("User not found with username: " + username);
-        }
-        return new org.springframework.security.core.userdetails.User(user.getUsername(), user.getPassword(),
-                new ArrayList<>());
+    @Transactional(readOnly = true)
+    public UserDetails loadUserByUsername(String username) {
+        Optional<User> userOptional = userRepository.findByUsername(username);
+        User user = userOptional
+                .orElseThrow(() -> new UsernameNotFoundException("No user " +
+                        "Found with username : " + username));
+
+        return new org.springframework.security
+                .core.userdetails.User(user.getUsername(), user.getPassword(),
+                user.isEnabled(), true, true,
+                true, getAuthorities("USER"));
     }
 
-    public User save(User user) {
-        String password = user.getPassword();
-        user.setPassword(bcryptEncoder.encode(password));
-        return userRepository.save(user);
+    private Collection<? extends GrantedAuthority> getAuthorities(String role) {
+        return singletonList(new SimpleGrantedAuthority(role));
     }
 }
