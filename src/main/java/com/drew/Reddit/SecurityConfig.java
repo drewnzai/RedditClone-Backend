@@ -55,9 +55,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.cors().and()
+        httpSecurity
                 .csrf().disable()
-                .authorizeHttpRequests(authorize -> authorize
+                .authorizeHttpRequests()
                         .antMatchers("/api/auth/**")
                         .permitAll()
                         .antMatchers(HttpMethod.GET, "/api/subreddit")
@@ -74,7 +74,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                                 "/webjars/**")
                         .permitAll()
                         .anyRequest()
-                        .authenticated())
+                        .authenticated().and()
                 .oauth2ResourceServer(OAuth2ResourceServerConfigurer::jwt)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .exceptionHandling(exceptions -> exceptions
