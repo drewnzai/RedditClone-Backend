@@ -16,14 +16,14 @@ import java.util.Optional;
 import static com.drew.Reddit.models.VoteType.DOWNVOTE;
 import static com.drew.Reddit.models.VoteType.UPVOTE;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = { CommentRepository.class})
 public abstract class PostMapper {
 
-    @Autowired
-    private CommentRepository commentRepository;
-    @Autowired
+    //@Autowired
+    protected CommentRepository commentRepository;
+    //@Autowired
     private VoteRepository voteRepository;
-    @Autowired
+    //@Autowired
     private AuthService authService;
 
 
