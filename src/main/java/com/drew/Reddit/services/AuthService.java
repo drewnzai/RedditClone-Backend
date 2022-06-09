@@ -48,7 +48,6 @@ public class AuthService {
         user.setPassword(passwordEncoder.encode(registerRequest.getPassword()));
         user.setCreated(Instant.now());
         user.setEnabled(false);
-        System.out.println("Working");
         userRepository.save(user);
 
         String token = generateVerificationToken(user);
