@@ -62,7 +62,7 @@ public class AuthService {
         Jwt principal = (Jwt) SecurityContextHolder.
                 getContext().getAuthentication().getPrincipal();
         return userRepository.findByUsername(principal.getSubject())
-                .orElseThrow(() -> new UsernameNotFoundException("User name not found - " + principal.getSubject()));
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found - " + principal.getSubject()));
     }
 
     private void fetchUserAndEnable(VerificationToken verificationToken) {
