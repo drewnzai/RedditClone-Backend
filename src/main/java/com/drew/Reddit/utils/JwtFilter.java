@@ -2,11 +2,10 @@ package com.drew.Reddit.utils;
 
 import com.drew.Reddit.services.UserDetailsServiceImpl;
 import com.google.common.base.Strings;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -20,13 +19,12 @@ import java.io.IOException;
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
-    private JwtProvider jwtProvider;
-    private UserDetailsService userDetailsService;
+    @Autowired
+    private JwtUtil jwtUtil;
 
-    public JwtFilter(JwtProvider jwtProvider, UserDetailsService userDetailsService) {
-        this.jwtProvider = jwtProvider;
-        this.userDetailsService = userDetailsService;
-    }
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
+
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,
@@ -35,9 +33,9 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String token = getToken(request);
 
-        if(token !=null && jwtProvider.verifyToken(token)) {
+        if(token !=null && jwtUtil.isTokenExpired(token)) {
 
-            String username = jwtProvider.getUsernameFromToken(token);
+            String username = jwtUtil.getUsernameFromToken(token);
 
             UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 
