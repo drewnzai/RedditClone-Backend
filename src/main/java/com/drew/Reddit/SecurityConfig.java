@@ -7,10 +7,8 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,7 +21,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Slf4j
 @EnableWebSecurity
-@ComponentScan("com.drew.Reddit.api")
 @RequiredArgsConstructor
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -37,8 +34,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     public JwtFilter jwtFilter;
 
-    @Bean(BeanIds.AUTHENTICATION_MANAGER)
     @Override
+    @Bean
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
@@ -49,31 +46,32 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .cors()
                 .and()
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .exceptionHandling().authenticationEntryPoint(entryPoint).and().sessionManagement()
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+                .and()
 
                 // add filter that will handle the verification of JW Token
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
-
-                .exceptionHandling(exceptions -> exceptions
-                        .authenticationEntryPoint(entryPoint))
-
                 .authorizeRequests()
-                        .antMatchers("/api/auth/**").permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/subreddit")
-                        .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/posts/")
-                        .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/posts/**")
-                        .permitAll()
-                        .antMatchers("/v2/api-docs",
+                .antMatchers("/api/auth/**").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/subreddit")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/posts")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/posts/**")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/comments")
+                .permitAll()
+                .antMatchers(HttpMethod.GET, "/api/comments/**")
+                .permitAll()
+                .antMatchers("/v2/api-docs",
                                 "/configuration/ui",
                                 "/swagger-resources/**",
                                 "/configuration/security",
                                 "/swagger-ui.html",
                                 "/webjars/**")
                         .permitAll()
-                        .anyRequest()
-                        .authenticated();
+                .anyRequest().authenticated();
     }
 
     @Override
@@ -88,6 +86,21 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
+                    /* Will ignore till I find a way to make JWTs Authentication Work
+
+                    .authorizeRequests()
+                        .antMatchers("/api/auth/**").permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/subreddit")
+                        .permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/posts")
+                        .permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/posts/**")
+                        .permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/comments")
+                        .permitAll()
+                        .antMatchers(HttpMethod.GET, "/api/comments/**")
+                        .permitAll().and().anyRequest().authenticated()
+                        */
 
 
 }

@@ -8,6 +8,7 @@ import com.drew.Reddit.dto.RegisterRequest;
 import com.drew.Reddit.exceptions.SpringRedditException;
 import com.drew.Reddit.models.NotificationEmail;
 import com.drew.Reddit.models.User;
+import com.drew.Reddit.models.UserDetailsImpl;
 import com.drew.Reddit.models.VerificationToken;
 import com.drew.Reddit.repositories.UserRepository;
 import com.drew.Reddit.repositories.VerificationTokenRepository;
@@ -20,7 +21,6 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.jwt.Jwt;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -59,10 +59,10 @@ public class AuthService {
 
     @Transactional(readOnly = true)
     public User getCurrentUser() {
-        Jwt principal = (Jwt) SecurityContextHolder.
+        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.
                 getContext().getAuthentication().getPrincipal();
-        return userRepository.findByUsername(principal.getSubject())
-                .orElseThrow(() -> new UsernameNotFoundException("Username not found - " + principal.getSubject()));
+        return userRepository.findByUsername(principal.getUsername())
+                .orElseThrow(() -> new UsernameNotFoundException("Username not found - " + principal.getUsername()));
     }
 
     private void fetchUserAndEnable(VerificationToken verificationToken) {
@@ -91,7 +91,7 @@ public class AuthService {
         Authentication authenticate = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(),
                 loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authenticate);
-        String token = jwtUtil.generateToken(authenticate);
+        String token = jwtUtil.generateJwtToken(authenticate);
         return AuthenticationResponse.builder()
                 .authenticationToken(token)
                 .refreshToken(refreshTokenService.generateRefreshToken().getToken())
