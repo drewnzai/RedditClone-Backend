@@ -2,7 +2,7 @@
 
 Greetings. 
 
-My name is Andrew Kombe, the owner of this project.
+My name is **Andrew Kombe**, the owner of this project.
 
 This is a personal project that seeks to recreate [Reddit](https://www.reddit.com/) a popular social media site.
 
