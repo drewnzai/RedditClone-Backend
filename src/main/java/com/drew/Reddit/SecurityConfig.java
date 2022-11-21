@@ -86,21 +86,4 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
 
-                    /* Will ignore till I find a way to make JWTs Authentication Work
-
-                    .authorizeRequests()
-                        .antMatchers("/api/auth/**").permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/subreddit")
-                        .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/posts")
-                        .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/posts/**")
-                        .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/comments")
-                        .permitAll()
-                        .antMatchers(HttpMethod.GET, "/api/comments/**")
-                        .permitAll().and().anyRequest().authenticated()
-                        */
-
-
 }
