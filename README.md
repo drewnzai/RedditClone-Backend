@@ -1,4 +1,4 @@
-#Reddit Clone
+# Reddit Clone
 
 Greetings. 
 
@@ -8,9 +8,9 @@ This is a personal project that seeks to recreate [Reddit](https://www.reddit.co
 
 This repository has the backend and frontend microservices for the app.
 
-The app was created in Kali Linux.
+The app was created in **Kali Linux**.
 
-##Backend
+## Backend
 
 The backend utilises the following technology:
     
@@ -23,5 +23,5 @@ The backend utilises the following technology:
 I used JWTs to secure the backend by using signed tokens with each request to use the API. 
 The tokens enable the backend to only accept requests from trusted sources, i.e the app's frontend.
 
-##Frontend
+## Frontend
 The frontend is found in the directory labeled Frontend **(src/Frontend)**. Check it out for details regarding the technology used there. 
