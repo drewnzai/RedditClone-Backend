@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 @font-face {
-    font-family: vag;
+    font-family: "vag";
     src: url(assets/fonts/vag.ttf) format("truetype");
   }
 
-/* html{
+html{
     padding: 0px;
     height: 100%;
 }
@@ -38,4 +38,5 @@ input.ng-invalid.ng-touched{
     opacity: 1;
   }
   
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

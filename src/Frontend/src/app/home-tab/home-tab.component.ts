@@ -4,12 +4,12 @@ import { PostService } from '../services/post.service';
 import { AuthService } from '../services/auth.service';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home-tab',
+  templateUrl: './home-tab.component.html',
+  styleUrls: ['./home-tab.component.css']
 })
-export class HomeComponent implements OnInit {
- 
+export class HomeTabComponent implements OnInit {
+  
   posts: Array<Post> = [];
   isLoggedIn!: boolean;
 

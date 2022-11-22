@@ -1,13 +1,7 @@
 header{
   border-radius: 5px solid black;
-   
 }
-
-nav{
-  padding: 8px 10px;
-  justify-content: space-between;
-  border-color: black;
-}
+  
 .reddit-icon-svg{
   height: 33px;
   width: 33px;
@@ -15,11 +9,6 @@ nav{
   
 }
 
-.header-button{
-  height: 20px;
-  width: 20px;
-  background-color: black;
-}
 
 .reddit-text{        
   font-weight: 600;
@@ -116,6 +105,50 @@ nav{
   max-width: 24px;
 }
 
-.mat-bar{
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
   background-color: white;
+  align-items: center;
+}
+
+.searchbar input {
+  width: 600px;
+  padding: 10px;
+  padding-left: 40px;
+  border-radius: 5px;
+  border: 1px solid rgb(230, 230, 230);
+  background-color: lightgray;
+}
+
+.searchbar input:hover {
+  border-color: grey;
+  background-color: white;
+}
+
+.searchbar {
+  position: relative;
+}
+.search-icon {
+  position: relative;
+  right: 32px;
+  top:8px;
+  width: 24px;
+  height:24px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.searchbar label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: 15px;
+}
+
+.searchbar label svg {
+  color: rgb(130, 130, 130);
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatIcon } from '@angular/material/icon';
 import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { AuthService } from '../services/auth.service';
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit {
   faUser = faUser;
   isLoggedIn!: boolean;
   username!: string;
-
+  matIcon = MatIcon;
   constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
