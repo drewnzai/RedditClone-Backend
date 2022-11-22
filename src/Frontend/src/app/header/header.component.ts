@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { AuthService } from '../services/auth.service';
 
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

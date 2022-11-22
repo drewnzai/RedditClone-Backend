@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Post } from '../models/post';
 import { PostService } from '../services/post.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -10,14 +11,18 @@ import { PostService } from '../services/post.service';
 export class HomeComponent implements OnInit {
  
   posts: Array<Post> = [];
+  isLoggedIn!: boolean;
 
-  constructor(private postService: PostService) {
+
+  constructor(private authService: AuthService, private postService: PostService) {
     this.postService.getAllPosts().subscribe(post => {
       this.posts = post;
     });
   }
 
   ngOnInit(): void {
+    this.isLoggedIn = this.authService.isLoggedIn();
+
   }
 
 
