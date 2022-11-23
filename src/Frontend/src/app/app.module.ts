@@ -12,7 +12,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './home/home.component';
 import { TokenInterceptor } from './token-interceptor';
 import { PostTileComponent } from './shared/post-tile/post-tile.component';
 import { SideBarComponent } from './shared/side-bar/side-bar.component';
@@ -28,6 +27,10 @@ import { ViewPostComponent } from './post/view-post/view-post.component';
 import { CommentComponent } from './comment/comment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
+import { MaterialModule } from 'src/material/material.module';
+import { HomeTabComponent } from './home-tab/home-tab.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,7 +38,6 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     HeaderComponent,
     SignupComponent,
     LoginComponent,
-    HomeComponent,
     PostTileComponent,
     SideBarComponent,
     SubredditSideBarComponent,
@@ -47,7 +49,8 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     CreatePostComponent,
     ViewPostComponent,
     CommentComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    HomeTabComponent
   ],
   imports: [
     BrowserModule,
@@ -60,6 +63,7 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
     ToastrModule.forRoot(),
     HttpClientModule,
     EditorModule,
+    MaterialModule,
     NgbModule
   ],
   providers: [
