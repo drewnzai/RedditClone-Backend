@@ -1,58 +1,21 @@
-<!-- <header>
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-      <div class="flex-grow-1" style="float: left" >
-          <a aria-label="Home" class="logo" routerLink="/home">
-              <img src="assets/reddit_logo.png" class="reddit-icon-svg" />
-            
-              <span class="reddit-text logo">
-                  reddit clone
-              </span>
-          </a>
-      </div>
-
-      <div>
-
-
-      </div>
-      <div class="flex-grow-1 float-right" style="float: right">
-          <div *ngIf="isLoggedIn" ngbDropdown class="float-right">
-              <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-                  <button (click)="goToUserProfile()" ngbDropdownItem>Profile</button>
-                 
-                  <button (click)="logout()" ngbDropdownItem>Logout</button>
-              </div>
-              <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
-                  <img class="account-icon" src="src/assets/avatar_default_08_D4E815.png">
-                  {{username}}
-              </button>
-          </div>            
-          <div *ngIf="!isLoggedIn" style="float: right">
-            
-              <a routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
-            
-              <a routerLink="/login" class="float-right login mr-2">Login</a>
-          </div>
-      </div>
-  </nav>
-</header>
- -->
-
 <div class="navbar">
     
     
     <div class="flex-grow-1 float-right" style="float: right">
         <a aria-label="Home" class="logo" routerLink="/home">
             <img src="assets/reddit_logo.png" class="reddit-icon-svg" />
-          
-            <span class="reddit-text logo">
-                reddit clone
-            </span>
+          &nbsp;
+            <div class="reddit-text">
+                reddit
+            </div>
         </a>
     </div>
+
     <div class="searchbar">
+        
         <label htmlFor="searchbar">
             <mat-icon>search</mat-icon>
-          </label>
+        </label>
         
          <input id="searchbar" placeholder="Search Reddit Clone" />
 
@@ -70,12 +33,24 @@
                 {{username}}
             </button>
         </div>            
-        <div *ngIf="!isLoggedIn" style="float: right">
-          
+        <div class="actions" *ngIf="!isLoggedIn" style="float: right">
+            
             <a routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
+                     
+          &nbsp;
+          &nbsp; 
           
             <a routerLink="/login" class="float-right login mr-2">Login</a>
+            
+            &nbsp;
+            &nbsp;
+
+            <mat-icon class="person">person</mat-icon>
+            &nbsp;
+            &nbsp;
+            &nbsp;
+            &nbsp;
         </div>
     </div>
-    <mat-icon svgIcon="left-arrow" class="search_icon"></mat-icon>
+    
 </div>
