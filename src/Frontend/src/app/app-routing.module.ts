@@ -8,11 +8,11 @@ import { ListSubredditsComponent } from './subreddit/list-subreddits/list-subred
 import { ViewPostComponent } from './post/view-post/view-post.component';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { CreatePostComponent } from './post/create-post/create-post.component';
-import { HomeTabComponent } from './home-tab/home-tab.component';
 import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: 'home', component: HomeTabComponent },
+  { path: 'home', component: HomeComponent },
   { path: 'view-post/:id', component: ViewPostComponent },
   { path: 'user-profile/:name', component: UserProfileComponent, canActivate: [AuthGuard] },
   { path: 'list-subreddits', component: ListSubredditsComponent },
