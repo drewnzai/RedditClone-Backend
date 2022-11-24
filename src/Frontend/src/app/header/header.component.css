@@ -166,9 +166,8 @@
   margin-left: 15px;
 }
 
-.items{
-  display:flex;
-  align-items: center;
+.items:hover{
+  border: 1px solid lightgrey;
 
 }
 
