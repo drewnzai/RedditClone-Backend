@@ -6,7 +6,7 @@
             <img src="assets/reddit_logo.png" class="reddit-icon-svg" />
           &nbsp;
             <div class="reddit-text">
-                reddit
+                redditclone
             </div>
         </a>
     </div>
@@ -22,17 +22,22 @@
       </div>
 
     <div class="flex-grow-1 float-right" style="float: right">
+        
         <div *ngIf="isLoggedIn" ngbDropdown class="float-right">
+            
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                 <button (click)="goToUserProfile()" ngbDropdownItem>Profile</button>
                
                 <button (click)="logout()" ngbDropdownItem>Logout</button>
             </div>
+
             <button class="userdetails" id="dropdownBasic1" ngbDropdownToggle>
                 <img class="account-icon" src="src/assets/avatar_default_08_D4E815.png">
                 {{username}}
             </button>
+
         </div>            
+        
         <div class="actions" *ngIf="!isLoggedIn" style="float: right">
             
             <a routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
@@ -44,13 +49,25 @@
             
             &nbsp;
             &nbsp;
+            
+            <div>
+            
+                <button mat-button [matMenuTriggerFor]="menu" style="margin-right: 10px;">
+                    <mat-icon>person_outline</mat-icon>
+                    <mat-icon>keyboard_arrow_down</mat-icon>
+                </button>
+                        <mat-menu #menu="matMenu">
+                            <a routerLink="/sign-up" style="text-decoration: none" mat-menu-item>Sign up</a>
+                          
+                            <a routerLink="/login" style="text-decoration: none" mat-menu-item>Login</a>
+                           
+                        </mat-menu>
 
-            <mat-icon class="person">person</mat-icon>
-            &nbsp;
-            &nbsp;
-            &nbsp;
-            &nbsp;
+
+            </div>            
+
+            </div>
+            
         </div>
     </div>
     
-</div>
