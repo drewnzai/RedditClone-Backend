@@ -28,7 +28,7 @@ import { CommentComponent } from './comment/comment.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { MaterialModule } from 'src/material/material.module';
-import { HomeTabComponent } from './home-tab/home-tab.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -50,7 +50,7 @@ import { HomeTabComponent } from './home-tab/home-tab.component';
     ViewPostComponent,
     CommentComponent,
     UserProfileComponent,
-    HomeTabComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
