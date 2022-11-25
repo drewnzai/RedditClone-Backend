@@ -29,6 +29,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { MaterialModule } from 'src/material/material.module';
 import { HomeComponent } from './home/home.component';
+import { OverlayModule } from "@angular/cdk/overlay";
 
 
 
@@ -63,6 +64,7 @@ import { HomeComponent } from './home/home.component';
     ToastrModule.forRoot(),
     HttpClientModule,
     EditorModule,
+    OverlayModule,
     MaterialModule,
     NgbModule
   ],
