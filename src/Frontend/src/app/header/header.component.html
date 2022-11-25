@@ -40,14 +40,14 @@
         
         <div class="actions" *ngIf="!isLoggedIn" style="float: right">
             
-            <a routerLink="/sign-up" class="float-right sign-up mr-2">Sign up</a>
+            <a class="float-right sign-up mr-2" (click)="signup()">Sign up</a>
                      
           &nbsp;
           &nbsp; 
           
-            <a routerLink="/login" class="float-right login mr-2">Login</a>
+            <a class="float-right login mr-2" (click)="login()">Login</a>
             
-            &nbsp;
+                &nbsp;
             &nbsp;
             
             <div>

@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import {MatMenuTrigger, MatMenu} from '@angular/material/menu';
+import { MatMenu} from '@angular/material/menu';
 import { Router } from '@angular/router';
+import { CloseScrollStrategy, Overlay, OverlayRef } from "@angular/cdk/overlay";
+import { ComponentPortal } from "@angular/cdk/portal";
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { AuthService } from '../services/auth.service';
+import { LoginComponent } from '../auth/login/login.component';
+import { SignupComponent } from '../auth/signup/signup.component';
 
 
 @Component({
@@ -15,8 +19,9 @@ export class HeaderComponent implements OnInit {
   isLoggedIn!: boolean;
   username!: string;
   menu!: MatMenu;
+  overlayRef!: OverlayRef;
   
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private overlay: Overlay) { }
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn();
@@ -27,8 +32,39 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/user-profile/' + this.username);
   }
 
+  login(): void{
+    //create an  overlay
+    this.overlayRef = this.overlay.create({
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+      hasBackdrop: true,
+      scrollStrategy: this.overlay.scrollStrategies.close()
+    });
+    
+
+    this.overlayRef.addPanelClass("justify-content-center");
+
+    //Render the component
+    this.overlayRef.attach(new ComponentPortal(LoginComponent));
+
+  }
+
+  signup(): void{
+
+    this.overlayRef = this.overlay.create({
+      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
+      hasBackdrop: true
+    });
+    
+
+    this.overlayRef.addPanelClass("login-section");
+
+    //Render the component
+    this.overlayRef.attach(new ComponentPortal(SignupComponent));
+
+  }
+
   logout(){
     this.authService.logout();
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('');
   }
 }
