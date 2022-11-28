@@ -17,13 +17,13 @@
     font-weight: bold;    
     color: aliceblue;
 }
-.login-failed, .register-success{
+.register-success{
     text-align: center;
     margin: auto;
     margin-top: 10px;
     border: 2px solid black;
     width: 65%;    
-    background-color: red;
+    background-color: green;
 }
 
 .login-failed-text, .register-success-text{

@@ -57,9 +57,9 @@
                     <mat-icon>keyboard_arrow_down</mat-icon>
                 </button>
                         <mat-menu #menu="matMenu">
-                            <a routerLink="/sign-up" style="text-decoration: none" mat-menu-item>Sign up</a>
+                            <a (click)="signup()" style="text-decoration: none" mat-menu-item>Sign up</a>
                           
-                            <a routerLink="/login" style="text-decoration: none" mat-menu-item>Login</a>
+                            <a (click)="login()" style="text-decoration: none" mat-menu-item>Login</a>
                            
                         </mat-menu>
 

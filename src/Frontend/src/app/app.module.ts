@@ -30,6 +30,8 @@ import { UserProfileComponent } from './auth/user-profile/user-profile.component
 import { MaterialModule } from 'src/material/material.module';
 import { HomeComponent } from './home/home.component';
 import { OverlayModule } from "@angular/cdk/overlay";
+import { SignupOverlayComponent } from './auth/signup-overlay/signup-overlay.component';
+import { LoginOverlayComponent } from './auth/login-overlay/login-overlay.component';
 
 
 
@@ -51,7 +53,9 @@ import { OverlayModule } from "@angular/cdk/overlay";
     ViewPostComponent,
     CommentComponent,
     UserProfileComponent,
-    HomeComponent
+    HomeComponent,
+    SignupOverlayComponent,
+    LoginOverlayComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +78,7 @@ import { OverlayModule } from "@angular/cdk/overlay";
     useClass: TokenInterceptor,
     multi: true}
   ],
+  entryComponents: [LoginComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
