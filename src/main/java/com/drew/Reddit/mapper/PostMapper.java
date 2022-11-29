@@ -6,24 +6,26 @@ import com.drew.Reddit.models.*;
 import com.drew.Reddit.repositories.CommentRepository;
 import com.drew.Reddit.repositories.VoteRepository;
 import com.drew.Reddit.services.AuthService;
-import com.github.marlonlom.utilities.timeago.TimeAgo;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.time.Duration;
+import java.time.Instant;
 import java.util.Optional;
 
 import static com.drew.Reddit.models.VoteType.DOWNVOTE;
 import static com.drew.Reddit.models.VoteType.UPVOTE;
 
+
 @Mapper(componentModel = "spring", uses = { CommentRepository.class})
 public abstract class PostMapper {
 
-    //@Autowired
-    protected CommentRepository commentRepository;
-    //@Autowired
+    @Autowired
+    private CommentRepository commentRepository;
+    @Autowired
     private VoteRepository voteRepository;
-    //@Autowired
+    @Autowired
     private AuthService authService;
 
 
@@ -48,7 +50,8 @@ public abstract class PostMapper {
     }
 
     String getDuration(Post post) {
-        return TimeAgo.using(post.getCreatedDate().toEpochMilli());
+
+        return Long.toString(Duration.between(post.getCreatedDate(), Instant.now()).toMillis());
     }
 
     boolean isPostUpVoted(Post post) {
@@ -70,4 +73,7 @@ public abstract class PostMapper {
         return false;
     }
 
+
+
 }
+
