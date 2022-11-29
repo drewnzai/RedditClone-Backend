@@ -12,6 +12,7 @@ import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
+@Table(name = "votes")
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity

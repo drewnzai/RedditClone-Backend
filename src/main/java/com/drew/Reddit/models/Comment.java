@@ -14,6 +14,7 @@ import static javax.persistence.GenerationType.IDENTITY;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Table(name = "comments")
 @Entity
 public class Comment {
     @Id

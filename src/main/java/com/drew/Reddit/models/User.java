@@ -15,6 +15,7 @@ import java.util.Set;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Data
+@Table(name = "users")
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
