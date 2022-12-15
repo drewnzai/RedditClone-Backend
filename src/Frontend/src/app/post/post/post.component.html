@@ -1,1 +1,16 @@
-<p>post works!</p>
+<mat-card *ngFor="let post of posts">
+    <mat-card-header>
+      <div>
+        <mat-card-title>{{ post.postName }}</mat-card-title>
+        <mat-card-subtitle>{{ post.description }}</mat-card-subtitle>
+      </div>  
+    </mat-card-header>
+    <mat-card-content>
+      <div class="img-container">
+        <img  width="100" height="100">
+      </div>
+      <div>
+        <span></span>
+      </div>      
+    </mat-card-content>
+  </mat-card>

@@ -4,6 +4,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatToolbarModule } from '@angular/material/toolbar'; 
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
+import { MatCardModule } from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
 
 
@@ -14,6 +15,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatProgressSpinnerModule,
     MatToolbarModule,
     MatButtonModule,
+    MatCardModule,
     MatIconModule,
     MatMenuModule
   ],
@@ -23,6 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
+    MatCardModule,
     MatMenuModule
   ]
 })
