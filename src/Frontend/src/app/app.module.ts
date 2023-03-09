@@ -5,10 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { SignupComponent } from './auth/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LoginComponent } from './auth/login/login.component';
 import { NgxWebstorageModule } from 'ngx-webstorage';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -29,9 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UserProfileComponent } from './auth/user-profile/user-profile.component';
 import { MaterialModule } from 'src/material/material.module';
 import { HomeComponent } from './home/home.component';
-import { OverlayModule } from "@angular/cdk/overlay";
-import { SignupOverlayComponent } from './auth/signup-overlay/signup-overlay.component';
-import { LoginOverlayComponent } from './auth/login-overlay/login-overlay.component';
+
 
 
 
@@ -39,8 +35,6 @@ import { LoginOverlayComponent } from './auth/login-overlay/login-overlay.compon
   declarations: [
     AppComponent,
     HeaderComponent,
-    SignupComponent,
-    LoginComponent,
     PostTileComponent,
     SideBarComponent,
     SubredditSideBarComponent,
@@ -53,9 +47,7 @@ import { LoginOverlayComponent } from './auth/login-overlay/login-overlay.compon
     ViewPostComponent,
     CommentComponent,
     UserProfileComponent,
-    HomeComponent,
-    SignupOverlayComponent,
-    LoginOverlayComponent
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -68,7 +60,6 @@ import { LoginOverlayComponent } from './auth/login-overlay/login-overlay.compon
     ToastrModule.forRoot(),
     HttpClientModule,
     EditorModule,
-    OverlayModule,
     MaterialModule,
     NgbModule
   ],
@@ -78,7 +69,7 @@ import { LoginOverlayComponent } from './auth/login-overlay/login-overlay.compon
     useClass: TokenInterceptor,
     multi: true}
   ],
-  entryComponents: [LoginComponent],
+  entryComponents: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
