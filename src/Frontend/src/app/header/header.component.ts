@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatMenu} from '@angular/material/menu';
+import { MatLegacyMenu as MatMenu} from '@angular/material/legacy-menu';
 import { Router } from '@angular/router';
 import { CloseScrollStrategy, Overlay, OverlayRef } from "@angular/cdk/overlay";
 import { ComponentPortal } from "@angular/cdk/portal";
