@@ -7,3 +7,5 @@
 /target/generated-test-sources
 /.vscode
 .idea/compiler.xml
+.idea/jpa-buddy.xml
+.idea/misc.xml
