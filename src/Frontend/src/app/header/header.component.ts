@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatMenu } from '@angular/material/menu';
 import { Router } from '@angular/router';
-import { CloseScrollStrategy, Overlay, OverlayRef } from "@angular/cdk/overlay";
-import { ComponentPortal } from "@angular/cdk/portal";
-import { faUser } from '@fortawesome/free-regular-svg-icons';
+import { LoginRequestPayload } from '../models/login-request.payload'
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -12,17 +11,24 @@ import { AuthService } from '../services/auth.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  faUser = faUser;
+  loginRequestPayload!: LoginRequestPayload;
+  loginForm!: FormGroup;
   isLoggedIn!: boolean;
   username!: string;
   menu!: MatMenu;
-  overlayRef!: OverlayRef;
+ 
   
-  constructor(private authService: AuthService, private router: Router, private overlay: Overlay) { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.username = this.authService.getUserName();
+
+    this.loginForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required])
+        
+    });
   }
 
   goToUserProfile() {
@@ -30,30 +36,17 @@ export class HeaderComponent implements OnInit {
   }
 
   login(): void{
-    //create an  overlay
-    this.overlayRef = this.overlay.create({
-      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
-      hasBackdrop: true,
-      scrollStrategy: this.overlay.scrollStrategies.close()
-    });
-    
+    this.loginRequestPayload.username = this.loginForm.get('username')?.value;
+    this.loginRequestPayload.password = this.loginForm.get('password')?.value;
 
-    this.overlayRef.addPanelClass("justify-content-center");
-
-   
-
+    if(this.authService.login(this.loginRequestPayload)){
+      this.router.navigateByUrl('home');
+    }
   }
 
   signup(): void{
 
-    this.overlayRef = this.overlay.create({
-      positionStrategy: this.overlay.position().global().centerHorizontally().centerVertically(),
-      hasBackdrop: true
-    });
-    
-
-    this.overlayRef.addPanelClass("login-section");
-
+   
     
 
   }
