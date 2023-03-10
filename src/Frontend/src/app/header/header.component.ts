@@ -1,13 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyMenu as MatMenu} from '@angular/material/legacy-menu';
+import { MatMenu } from '@angular/material/menu';
 import { Router } from '@angular/router';
 import { CloseScrollStrategy, Overlay, OverlayRef } from "@angular/cdk/overlay";
 import { ComponentPortal } from "@angular/cdk/portal";
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import { AuthService } from '../services/auth.service';
-import { LoginOverlayComponent } from '../auth/login-overlay/login-overlay.component';
-import { SignupOverlayComponent } from '../auth/signup-overlay/signup-overlay.component';
-
 
 @Component({
   selector: 'app-header',
@@ -43,8 +40,7 @@ export class HeaderComponent implements OnInit {
 
     this.overlayRef.addPanelClass("justify-content-center");
 
-    //Render the component
-    this.overlayRef.attach(new ComponentPortal(LoginOverlayComponent));
+   
 
   }
 
@@ -58,8 +54,7 @@ export class HeaderComponent implements OnInit {
 
     this.overlayRef.addPanelClass("login-section");
 
-    //Render the component
-    this.overlayRef.attach(new ComponentPortal(SignupOverlayComponent));
+    
 
   }
 
