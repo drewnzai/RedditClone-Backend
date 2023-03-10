@@ -59,9 +59,9 @@
                     <mat-icon>keyboard_arrow_down</mat-icon>
                 </button>
                         <mat-menu #menu="matMenu">
-                            <a (click)="signup()" style="text-decoration: none" mat-menu-item>Sign up</a>
+                            <a data-bs-toggle="modal" data-bs-target="#signupModal" style="text-decoration: none" mat-menu-item>Sign up</a>
                           
-                            <a (click)="login()" style="text-decoration: none" mat-menu-item>Login</a>
+                            <a data-bs-toggle="modal" data-bs-target="#loginModal" style="text-decoration: none" mat-menu-item>Login</a>
                            
                         </mat-menu>
 
@@ -73,14 +73,6 @@
         </div>
     </div>
     
-    <!-- <div class="d-flex">
-        
-        <button type="button" class="btn btn-info px-4" data-bs-toggle="modal" data-bs-target="#loginModal">
-          Login
-        </button>
-        <button type="button" class="btn btn-info px-4" data-bs-toggle="modal" data-bs-target="#signupModal">
-          Signup
-        </button> -->
     
         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
@@ -93,18 +85,16 @@
                 <form [formGroup]="loginForm" (ngSubmit)="login()">
                   <div class="mb-3">
                     <label for="id_email" class="form-label">Email address</label>
-                    <input formControlName="username" [class.is-invalid]="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" type="email"
-                      class="form-control" id="id_email">
+                    <input type="text" id="user_name" class="form-control" [formControlName]="'username'" name="user_name" required
+                    autofocus>
                     <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.hasError('required')" class="d-block invalid-feedback">Please
-                      provide a Email.</div>
-                    <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.hasError('email')" class="d-block invalid-feedback">Email
-                      address is
-                      not valid</div>
+                      provide a Email.
+                    </div>
+                    
                   </div>
                   <div class="mb-3">
                     <label for="id_Password" class="form-label">Password</label>
-                    <input formControlName="password" [class.is-invalid]="loginForm.get('password')?.touched && loginForm.get('password')?.invalid"
-                      type="password" class="form-control" id="id_Password">
+                    <input type="password" id="password" class="form-control" [formControlName]="'password'" name="password" required>
                     <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.hasError('required')" class="d-block invalid-feedback">
                       Please
                       provide a Password.</div>
@@ -121,7 +111,7 @@
           </div>
         </div>
     
-        <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
               <div class="modal-header">
@@ -153,4 +143,4 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->

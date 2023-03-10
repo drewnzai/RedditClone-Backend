@@ -18,7 +18,12 @@ export class HeaderComponent implements OnInit {
   menu!: MatMenu;
  
   
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router) { 
+    this.loginRequestPayload = {
+      username: '',
+      password: ''
+    };
+  }
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn();
@@ -36,13 +41,22 @@ export class HeaderComponent implements OnInit {
   }
 
   login(): void{
-    this.loginRequestPayload.username = this.loginForm.get('username')?.value;
-    this.loginRequestPayload.password = this.loginForm.get('password')?.value;
+   
+      this.loginRequestPayload.username = this.loginForm.get('username')!.value;
+      this.loginRequestPayload.password = this.loginForm.get('password')!.value;
+  
+      this.authService.login(this.loginRequestPayload).subscribe(data => {
+        
+    // $('#modal').hide();
 
-    if(this.authService.login(this.loginRequestPayload)){
-      this.router.navigateByUrl('home');
+          console.log("Success");
+        this.router.navigateByUrl('home');
+
+
+        
+      });
     }
-  }
+  
 
   signup(): void{
 
