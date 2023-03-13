@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { signupRequestPayload } from '../models/signup-request.payload';
+import { SignupRequestPayload } from '../models/signup-request.payload';
 import { Observable, map, throwError } from 'rxjs';
 import { LoginRequestPayload } from '../models/login-request.payload';
 import { LoginResponse } from '../models/login-response.payload';
@@ -19,7 +19,7 @@ export class AuthService {
     username: this.getUserName()
   } 
 
-  signup(signupRequestPayload: signupRequestPayload): Observable<any>{
+  signup(signupRequestPayload: SignupRequestPayload): Observable<any>{
     return this.httpClient.post('http://localhost:8080/api/auth/signup',
      signupRequestPayload, {responseType: 'text'});
 

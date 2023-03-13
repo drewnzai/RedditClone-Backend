@@ -27,6 +27,11 @@
   
   
 }
+.modaltitle{
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
