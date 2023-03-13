@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LoginRequestPayload } from '../models/login-request.payload'
 import { SignupRequestPayload } from '../models/signup-request.payload';
 import { AuthService } from '../services/auth.service';
+import { LocalStorageService } from 'ngx-webstorage';
 
 @Component({
   selector: 'app-header',
@@ -21,7 +22,9 @@ export class HeaderComponent implements OnInit {
   menu!: MatMenu;
  
   
-  constructor(private authService: AuthService, private router: Router) { 
+  constructor(private authService: AuthService, 
+    private router: Router, 
+    private localStorage: LocalStorageService) { 
     
     this.loginRequestPayload = {
       username: '',
@@ -92,6 +95,7 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.authService.logout();
+    this.isLoggedIn = false;
     this.router.navigateByUrl('');
   }
 }
