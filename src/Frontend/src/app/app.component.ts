@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { trendingItems } from './models/trending-items';
+
 
 @Component({
   selector: 'app-root',
