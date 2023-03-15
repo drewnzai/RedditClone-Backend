@@ -14,4 +14,5 @@ public class TrendingItemsDto {
     private String subreddit_name;
     private String subreddit_description;
     private String image_name;
+    private String title;
 }

@@ -22,6 +22,6 @@ public class TrendingItem {
     private Subreddit subreddit;
     @Column(name = "images")
     private String image_src;
-
-
+    @Column(name = "title")
+    private String title;
 }
