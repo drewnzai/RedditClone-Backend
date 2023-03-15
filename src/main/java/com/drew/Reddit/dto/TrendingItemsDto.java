@@ -13,6 +13,6 @@ public class TrendingItemsDto {
     private Long id;
     private String subreddit_name;
     private String subreddit_description;
-    private String image_name;
+    private String image_src;
     private String title;
 }

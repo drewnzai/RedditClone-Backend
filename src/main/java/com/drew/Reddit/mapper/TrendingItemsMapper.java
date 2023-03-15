@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public abstract class TrendingItemsMapper {
     @Autowired
     SubredditRepository repository;
-    @Mapping(target="image_name", source = "image_src")
+
     @Mapping(target = "subreddit_name", expression = "java(getName(trendingItem.getSubreddit()))")
     @Mapping(target = "subreddit_description", expression = "java(getDescription(trendingItem.getSubreddit()))")
     public abstract TrendingItemsDto mapTrendingItemtoDto(TrendingItem trendingItem);
