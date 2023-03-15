@@ -29,7 +29,7 @@ public abstract class PostMapper {
 
 
     @Mapping(target = "createdDate", expression = "java(java.time.Instant.now())")
-    @Mapping(target = "description", source = "postRequest.description")
+    @Mapping(target = "description", expression = "java(getDescription(postRequest))")
     @Mapping(target = "subreddit", source = "subreddit")
     @Mapping(target = "voteCount", constant = "0")
     @Mapping(target = "user", source = "user")
@@ -47,6 +47,10 @@ public abstract class PostMapper {
     Integer commentCount(Post post) {
         return commentRepository.findByPost(post).size();
     }
+    String getDescription(PostRequest postRequest){
+        return postRequest.getDescription();
+    }
+
 
     String getDuration(Post post) {
 
