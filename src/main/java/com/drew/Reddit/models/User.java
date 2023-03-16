@@ -38,4 +38,6 @@ public class User {
     private Set<Role> roles = new HashSet<>();
     private Instant created;
     private boolean enabled;
+
+    private String profile_image;
 }
