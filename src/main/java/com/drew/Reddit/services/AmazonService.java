@@ -38,8 +38,6 @@ public class AmazonService {
     }
 
 
-    public void savePicture(String pictureName) {
-    }
 
     public byte[] download(String path, String key) {
         try {

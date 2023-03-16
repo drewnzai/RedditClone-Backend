@@ -49,4 +49,10 @@ public class UserService {
     public void deleteUser(Long id) {
         userRepository.deleteById(id);
     }
+
+    public void updateProfileImage(String username, String fileName) {
+        User user = userRepository.findByUsername(username).get();
+        user.setProfile_image(fileName);
+
+    }
 }
