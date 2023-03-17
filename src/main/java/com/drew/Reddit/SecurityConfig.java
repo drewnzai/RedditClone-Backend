@@ -27,10 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     private final UserDetailsServiceImpl userDetailsService;
 
-    private JwtAuthenticationEntryPoint entryPoint;
+    private final JwtAuthenticationEntryPoint entryPoint;
 
-    @Autowired
-    public JwtFilter jwtFilter;
+    private final JwtFilter jwtFilter;
 
     @Override
     @Bean
@@ -64,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .permitAll()
                 .antMatchers(HttpMethod.GET, "/api/trending")
                 .permitAll()
-                .antMatchers(HttpMethod.GET, "/api/user")
+                .antMatchers(HttpMethod.GET, "/api/user/**")
                 .permitAll()
                 .antMatchers("/v2/api-docs",
                                 "/configuration/ui",
