@@ -6,6 +6,7 @@ import com.drew.Reddit.models.User;
 import com.drew.Reddit.repositories.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -54,5 +55,9 @@ public class UserService {
         User user = userRepository.findByUsername(username).get();
         user.setProfile_image(fileName);
 
+    }
+
+    public User getUser(String username){
+        return userRepository.findByUsername(username).get();
     }
 }

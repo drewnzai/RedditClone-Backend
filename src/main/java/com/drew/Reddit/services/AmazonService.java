@@ -6,7 +6,9 @@ import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.util.IOUtils;
 import lombok.RequiredArgsConstructor;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,7 +20,7 @@ import java.util.Optional;
 public class AmazonService {
 
     private final AmazonS3 amazonS3;
-
+    @Async
     public void save(String path, String fileName,
                      Optional<Map<String, String>> optionalMetadata,
                      InputStream inputStream){
@@ -45,7 +47,9 @@ public class AmazonService {
             return IOUtils.toByteArray(object.getObjectContent());
 
         } catch (AmazonServiceException | IOException e) {
-            throw new IllegalStateException("Failed to download file to s3", e);
+            throw new IllegalStateException("Failed to download file from s3", e);
         }
     }
+
+
 }
