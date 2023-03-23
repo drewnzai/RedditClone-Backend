@@ -9,6 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Serializable;
 
+/*
+*   Custom Entrypoint to enable for the screening of JWTs.
+* */
+
 @Component
 public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint, Serializable {
 

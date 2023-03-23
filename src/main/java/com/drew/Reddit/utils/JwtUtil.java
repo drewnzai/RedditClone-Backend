@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 import java.time.Instant;
 import java.util.Date;
 
+/*
+*   Creates JWTs to associated user and validates received JWTs.
+* */
+
 @Component
 public class JwtUtil {
 

@@ -18,6 +18,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+/*
+*   Retrieves JWTs from requests and validates them.
+* */
+
 @Component
 public class JwtFilter extends OncePerRequestFilter {
 
