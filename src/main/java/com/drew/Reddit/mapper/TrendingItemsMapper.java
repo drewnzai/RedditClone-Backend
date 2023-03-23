@@ -12,6 +12,10 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;
 
+/*
+ *   Maps a trending item to its respective DTO and vice-versa.
+ * */
+
 @Mapper(componentModel = "spring", uses = { SubredditRepository.class})
 public abstract class TrendingItemsMapper {
     @Autowired

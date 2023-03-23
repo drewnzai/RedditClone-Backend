@@ -16,6 +16,9 @@ import java.util.Optional;
 import static com.drew.Reddit.models.VoteType.DOWNVOTE;
 import static com.drew.Reddit.models.VoteType.UPVOTE;
 
+/*
+ *   Maps a Post to its respective DTO and vice-versa.
+ * */
 
 @Mapper(componentModel = "spring", uses = { CommentRepository.class})
 public abstract class PostMapper {

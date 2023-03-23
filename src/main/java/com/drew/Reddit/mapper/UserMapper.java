@@ -5,6 +5,10 @@ import com.drew.Reddit.models.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 
+/*
+ *   Maps a user to its respective DTO and vice-versa.
+ * */
+
 @Mapper(componentModel = "spring")
 public interface UserMapper {
 

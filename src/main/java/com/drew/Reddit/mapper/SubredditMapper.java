@@ -9,6 +9,10 @@ import org.mapstruct.Mapping;
 
 import java.util.List;
 
+/*
+ *   Maps a subreddit to its respective DTO and vice-versa.
+ * */
+
 @Mapper(componentModel = "spring")
 public interface SubredditMapper {
 
