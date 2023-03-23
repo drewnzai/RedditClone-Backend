@@ -7,6 +7,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
+/*
+ *   Provides necessary information to the frontend after successful login.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

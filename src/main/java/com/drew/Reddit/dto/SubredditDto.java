@@ -5,6 +5,10 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*
+ *   Provides a way for frontend application to access relevant Subreddit information.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

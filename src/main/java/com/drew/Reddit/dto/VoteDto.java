@@ -6,6 +6,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*
+ *   Provides a way for frontend application to access relevant Vote information.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -4,6 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*
+ *   Provides a way for the backend to receive a request to create a post.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 
+/*
+ *   Provides a way for the backend to receive relevant logout information.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

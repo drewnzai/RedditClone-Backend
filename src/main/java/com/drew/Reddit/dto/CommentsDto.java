@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 
+/*
+ *   Provides a way for frontend application to access relevant Comment information.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

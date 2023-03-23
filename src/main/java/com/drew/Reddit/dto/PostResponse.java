@@ -4,6 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+/*
+ *   Provides a way for the backend to send information to the frontend application once
+ *      a post has been successfully created.
+ * */
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

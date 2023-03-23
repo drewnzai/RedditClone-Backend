@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.NotBlank;
 
+/*
+ *   Provides a way for the backend to receive relevant information to enable the renewal of expired JWTs.
+ * */
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
