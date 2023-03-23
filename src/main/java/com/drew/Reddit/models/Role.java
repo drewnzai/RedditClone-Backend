@@ -6,6 +6,11 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
+/*
+*   Defines the Role and authorities a user gets.
+* */
+
+
 @Entity
 @Table(name = "roles")
 @AllArgsConstructor

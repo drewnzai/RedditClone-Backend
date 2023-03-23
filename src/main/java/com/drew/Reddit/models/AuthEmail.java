@@ -1,5 +1,8 @@
 package com.drew.Reddit.models;
 
+/*
+*   Holds all the information that is sent as an email for a user to verify their account after creation
+* */
 public class AuthEmail {
     private String subject;
     private String recipient;

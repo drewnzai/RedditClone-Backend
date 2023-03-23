@@ -13,6 +13,12 @@ import java.util.List;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
+/*
+*   This model provides a way to create Subreddits.
+*   Has a ManyToOne relationship with a User and OneToMany relationship with Posts.
+* */
+
+
 @Data
 @Table(name = "subreddits")
 @AllArgsConstructor

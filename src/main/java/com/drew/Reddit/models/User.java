@@ -14,6 +14,11 @@ import java.util.Set;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
+/*
+*   Pretty self-explanatory.
+* */
+
+
 @Data
 @Table(name = "users")
 @AllArgsConstructor

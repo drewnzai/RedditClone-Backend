@@ -11,6 +11,10 @@ import java.time.Instant;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
+/*
+*   Model that allows for a user to comment on a Post.
+*   Is bound by ManyToOne relationships with individual Posts and Users.
+* */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

@@ -7,6 +7,11 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.Instant;
 
+/*
+*   This model provides a way to refresh an expired JWT.
+* */
+
+
 @Data
 @Entity
 @Table(name = "refresh_tokens")

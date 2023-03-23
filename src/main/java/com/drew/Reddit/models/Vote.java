@@ -11,6 +11,11 @@ import javax.validation.constraints.NotNull;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
+/*
+*   Provides a way to vote on a Post.
+*   Has ManyToOne relationships with individual users and posts.
+* */
+
 @Data
 @Table(name = "votes")
 @AllArgsConstructor

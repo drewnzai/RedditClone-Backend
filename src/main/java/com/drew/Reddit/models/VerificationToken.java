@@ -10,6 +10,11 @@ import java.time.Instant;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
+/*
+*   Provides a way to verify a recently created account.
+* */
+
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

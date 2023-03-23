@@ -8,6 +8,12 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 import static javax.persistence.GenerationType.IDENTITY;
+
+/*
+*   This model allows to store Trending item information.
+* */
+
+
 @Data
 @Entity
 @Table(name = "trending")

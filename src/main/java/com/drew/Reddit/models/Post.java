@@ -13,6 +13,11 @@ import java.time.Instant;
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;
 
+/*
+*   This model allows a user to post in a Subreddit.
+*   Bound by ManyToOne relationships with individual Users and Subreddits.
+* */
+
 @Data
 @Entity
 @Table(name = "posts")
