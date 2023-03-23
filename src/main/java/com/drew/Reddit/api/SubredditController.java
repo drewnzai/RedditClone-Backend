@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
+*  This API endpoint handles all Subreddit related functionality.
+* */
+
+
 @RestController
 @RequestMapping("/api/subreddit")
 @AllArgsConstructor

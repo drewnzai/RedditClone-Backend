@@ -11,6 +11,10 @@ import java.util.List;
 import static org.springframework.http.HttpStatus.CREATED;
 import static org.springframework.http.HttpStatus.OK;
 
+/*
+* This API endpoint handles all Comment related functionality.
+* */
+
 @RestController
 @RequestMapping("/api/comments")
 @AllArgsConstructor

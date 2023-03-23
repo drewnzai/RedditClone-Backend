@@ -12,6 +12,11 @@ import java.util.List;
 
 import static org.springframework.http.ResponseEntity.status;
 
+
+/*
+* This API endpoint handles all Post related functionality.
+* */
+
 @RestController
 @RequestMapping("/api/posts")
 @AllArgsConstructor

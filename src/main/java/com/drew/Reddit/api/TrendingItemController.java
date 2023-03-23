@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/*
+* This API endpoint provides the content (images, description, and Subreddit information) to the Trending section
+* */
 @RestController
 @AllArgsConstructor
 @Slf4j

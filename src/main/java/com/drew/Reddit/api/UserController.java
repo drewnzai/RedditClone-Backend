@@ -1,6 +1,5 @@
 package com.drew.Reddit.api;
 
-import com.amazonaws.services.dynamodbv2.xspec.S;
 import com.drew.Reddit.dto.UserDto;
 import com.drew.Reddit.exceptions.SpringRedditException;
 import com.drew.Reddit.models.User;
@@ -10,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,6 +19,11 @@ import java.util.Optional;
 import java.util.UUID;
 
 import static org.springframework.http.HttpStatus.OK;
+
+/*
+*   This API endpoint provides a given user's information to the public
+*       while providing a way for a user to update their information.
+* */
 
 @RestController
 @RequestMapping("/api/user")

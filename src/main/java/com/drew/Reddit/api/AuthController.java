@@ -14,6 +14,19 @@ import javax.validation.Valid;
 
 import static org.springframework.http.HttpStatus.OK;
 
+/*
+* This API endpoint handles all authentication: signup, login, and logout.
+* The signup function takes a registration request and returns a 200 value once
+*   completed and sends an email to the given email for verification.
+*
+* It handles the verification once the email link is entered.
+*
+* Login takes a request, checks whether the user exists, and returns a JWT and
+*   Refresh Token to refresh the JWT once it has expired.
+*
+* Logout invalidates and deletes the generated JWT and Refresh token.
+* */
+
 @RestController
 @RequestMapping("/api/auth/")
 @AllArgsConstructor
