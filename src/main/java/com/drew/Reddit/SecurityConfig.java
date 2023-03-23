@@ -19,6 +19,11 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/*
+ *   Handles all security related functionality: verifying users, authorising requests with correct credentials
+ *      , and providing a password encoder
+ * */
+
 @Slf4j
 @EnableWebSecurity
 @RequiredArgsConstructor

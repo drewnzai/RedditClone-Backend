@@ -10,6 +10,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+/*
+*   Handles the creation and maintenance of Amazon resources.
+* */
+
 @Configuration
 public class AmazonConfig {
     @Value(value = "${amazon.aws.access-key}")

@@ -11,6 +11,11 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+/*
+ *   Handles all Swagger related functionality: create and provide information on the APIs and
+ *      their respective requirements and responses.
+ * */
+
 @Configuration
 @EnableSwagger2
 public class SwaggerConfiguration {
