@@ -21,6 +21,11 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+
+/*
+*   Holds all logic related with creation, storage, and retrieval of comments.
+* */
+
 @Service
 @AllArgsConstructor
 public class CommentService {

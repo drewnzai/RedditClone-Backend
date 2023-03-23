@@ -12,6 +12,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/*
+*   Holds all logic related to the creation, storage, and retrieval of users.
+*   Additionally, it provides user information to the public.
+* */
+
 
 @Service
 @Transactional

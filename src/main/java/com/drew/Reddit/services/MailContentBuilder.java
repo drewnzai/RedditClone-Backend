@@ -5,6 +5,10 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
+/*
+*   Builds the email from the given template.
+* */
+
 @Service
 @AllArgsConstructor
 public class MailContentBuilder {

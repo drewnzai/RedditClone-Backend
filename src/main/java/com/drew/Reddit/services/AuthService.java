@@ -28,6 +28,12 @@ import java.time.Instant;
 import java.util.Optional;
 import java.util.UUID;
 
+
+/*
+*   Holds all logic related to the creation of users, logging in, issuing of JWTs and verification tokens,
+*       and verification of users.
+* */
+
 @Service
 @AllArgsConstructor
 @Transactional

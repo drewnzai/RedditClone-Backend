@@ -11,6 +11,10 @@ import org.springframework.transaction.annotation.Transactional;
 import java.time.Instant;
 import java.util.UUID;
 
+
+/*
+*   Holds all logic related to the creation, storage, and retrieval of refresh tokens that create new JWTs.
+* */
 @Service
 @AllArgsConstructor
 @Transactional

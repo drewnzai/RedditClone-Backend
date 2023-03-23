@@ -15,6 +15,11 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+/*
+*   Holds all logic related to the creation, storage, and retrieval of trending-items.
+* */
+
+
 @Service
 @AllArgsConstructor
 @Slf4j

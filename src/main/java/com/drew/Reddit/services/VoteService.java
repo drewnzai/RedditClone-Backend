@@ -16,6 +16,9 @@ import java.util.Optional;
 
 import static com.drew.Reddit.models.VoteType.UPVOTE;
 
+/*
+*   Holds all logic related to the creation, storage, and retrieval of Votes.
+* */
 
 @Service
 @AllArgsConstructor

@@ -15,6 +15,11 @@ import java.io.InputStream;
 import java.util.Map;
 import java.util.Optional;
 
+
+/*
+*   Holds all the logic related to upload and download of files from AWS.
+* */
+
 @Service
 @RequiredArgsConstructor
 public class AmazonService {

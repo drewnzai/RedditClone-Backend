@@ -12,6 +12,10 @@ import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+/*
+*   Holds all logic related to the creation, storage, and retrieval of emails.
+* */
+
 @Service
 @AllArgsConstructor
 @Slf4j
